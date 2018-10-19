@@ -1,0 +1,71 @@
+
+  <div class="container">
+    <div class="row">
+      <div class="heading center ">
+        <h4>Registration Numbers</h4>
+      
+      </div>
+    </div>
+
+<div class="row">
+  <div class="regNumInput center">
+    <h6>Insert a Registration Number:</h6>
+    {{#if messages.invalid}}
+    <div class="alertInvalid">
+        <h3> {{messages.invalid}}</h3>
+    </div>
+    {{/if}}
+
+    {{#if messages.valid}}
+    <div class="alertValid">
+        <h3> {{messages.valid}}</h3>
+    </div>
+    {{/if}}
+
+    <form class="" action="/reg" method="post">
+
+    <select onchange="filterBy(this)" type='submit' class="regSelectTwo" name="regSelect">
+        <option class="regSelectTwo"  name='town' value="All">All</option>
+        {{#each dropDown}}
+        <option value="{{town}}" {{selectedTag}}>{{town_name}}</option>
+        {{/each}}
+
+       
+
+      </select>
+
+    <input class='regTextandNumTwo' name="regInput" value="" pattern='[A-Z]{2,3}\s\d{3}\W\d{3}|[A-Z]{2,3}\s\d{2,3}' placeholder=''>
+
+    <button class="addRegButtonTwo" type="submit" name="button">Add</button>
+  </form>
+
+  </div>
+
+</div>
+
+<div class="row center">
+  <div class="displayRegClass">
+
+    {{#each regPlate}}
+    <li class=''>
+      {{reg}}
+    </li>
+    {{/each}}
+
+  </div>
+  <div class="clearButtonTwo center">
+    <a href="/reset" ><button class="clearRegButton" type="button" name="button">Reset</button></a>
+
+  </div>
+
+</div>
+
+
+  </div>
+
+  <script type="text/javascript">
+    function filterBy(elem){
+      var  tag = elem.value
+      location.href = '/filter/' + tag
+    }
+  </script>
