@@ -9,7 +9,7 @@
 
 <div class="row">
   <div class="regNumInput center">
-    <h6>Insert a Registration Number:</h6>
+    <h6>Enter a Registration Number below:</h6>
     {{#if messages.invalid}}
     <div class="alertInvalid">
         <h3> {{messages.invalid}}</h3>
@@ -34,7 +34,7 @@
 
       </select>
 
-    <input class='regTextandNumTwo' name="regInput" value="" pattern='[A-Z]{2,3}\s\d{3}\W\d{3}|[A-Z]{2,3}\s\d{2,3}' placeholder=''>
+    <input class='regTextandNumTwo' name="regInput" value=""  placeholder=''>
 
     <button class="addRegButtonTwo" type="submit" name="button">Add</button>
   </form>
@@ -53,10 +53,12 @@
     {{/each}}
 
   </div>
-  <div class="clearButtonTwo center">
-    <a href="/reset" ><button class="clearRegButton" type="button" name="button">Reset</button></a>
 
-  </div>
+    <form action="/reset" method="post">
+  <div class="clearButtonTwo center">
+    <input class="clearRegButton" type="Submit" name="button">
+
+  </form>
 
 </div>
 

@@ -1,0 +1,153 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: 0;
+  font-size: 100%;
+  font-family: monospace;
+  font-style: normal;
+  font: courier;
+}
+
+.container {
+  width: 90%;
+  height: 90%;
+  padding: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  background: burlywood;
+
+}
+
+.row{
+  margin:10px;
+  width: 100%;
+}
+
+.center {
+  text-align: center;
+  margin-left: 0 auto ;
+  margin-right: 0 auto;
+}
+.heading{
+  background-color: #6d4d4d;
+  width:100%;
+  float: left;
+}
+.regNumInput {
+  width:100%;
+  float: left;
+  font-size: 2ch;
+}
+
+.regNumInput select {
+
+  height: 20px;
+  background-color: white;
+  border-radius: 5px;
+  width: 20%;
+  font-family: monospace;
+  font-style: normal;
+  font: courier;
+}
+
+
+.regNumInput input {
+  width:50%;
+  /* float: left; */
+}
+
+.regNumInput button {
+  height: 20px;
+  background-color: rgb(114, 110, 110);
+  border-radius: 5px;
+  margin-left: 5px;
+  width:20%;
+  font-family: monospace;
+  font-style: normal;
+  font: courier;
+  /* float: left; */
+}
+
+.regTownSelect {
+  width:100%;
+  float: left;
+
+}
+
+.displayReg, .displayRegClass {
+  width:100%;
+  box-sizing: border-box;
+  float: left;
+  list-style: none;
+
+}
+
+
+.displayRegClass li {
+  list-style: none;
+  float: left;
+  width: 150px;
+  margin: 10px;
+  border: 1px black solid;
+  padding:5px;
+  border-radius: 5px;
+  background-color: #FCEB61;
+}
+
+.clearButton, .clearButtonTwo {
+  
+  float:left;
+  width:100%;
+  margin:11.5px;
+}
+
+.clearButtonTwo button{
+ /* margin-left: 12px; */
+ width:20%;
+ height: 20px;
+ background-color: rgb(114, 110, 110);
+ border-radius: 5px;
+ font-family: monospace;
+ font-style: normal;
+ font: courier;
+}
+
+.alert {
+  color: rgb(255, 0, 0);
+  width: 100%;
+  margin: 10px;
+}
+
+.alertInvalid {
+  color: rgb(255, 0, 21);
+  width: 100%;
+  margin: 10px;
+}
+
+.alertValid {
+  color: green;
+  width: 100%;
+  margin: 10px;
+}
+
+
+
+@media (max-width: 500px) {
+
+  .handleBars{
+    width: 90%;
+    padding:20px;
+    float: left;
+  }
+
+  .static{
+    width: 90%;
+    padding:20px;
+    float: left;
+  }
+
+}

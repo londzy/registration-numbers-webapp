@@ -92,11 +92,11 @@ app.post('/reg', async function(req, res, next) {
 
     if(await registration.addRegistration(req.body.regInput)){
       
-    req.flash('valid', 'Succesfully added registration');
+    req.flash('valid', 'Registration number added sucessfully');
 
 
     }else{
-    req.flash('invalid', 'Please Enter A valid Registration');
+    req.flash('invalid', 'Registration number you added is invalid, please enter again');
 
     }
     res.render('registration', {regPlate: await registration.mapReg()})
@@ -125,10 +125,9 @@ app.get('/filter/:tag', async function(req, res, next) {
 
 });
 
-app.get('/reset', async function(req, res, next) {
-
+app.post('/reset', async function(req, res, next) {
   try {
-    await registration.regDelete()
+    await registration.deleteReg()
     res.redirect('/')
 
   } catch (err) {
