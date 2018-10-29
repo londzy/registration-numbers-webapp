@@ -90,6 +90,9 @@ app.post('/reg', async function(req, res, next) {
 
   try {
 
+    let regs =   await registration.mapReg();
+  let dropValues = await registration.dropDown(req.params.tag);
+
     if(await registration.addRegistration(req.body.regInput)){
       
     req.flash('valid', 'Registration number added sucessfully');
@@ -99,12 +102,17 @@ app.post('/reg', async function(req, res, next) {
     req.flash('invalid', 'Registration number you added is invalid, please enter again');
 
     }
-    res.render('registration', {regPlate: await registration.mapReg()})
+    res.render('registration', {regPlate: await registration.mapReg(), dropDown:await registration.dropDown(req.params.tag)})
   }
     catch (err) {
      return next()
    }
 
+});
+
+app.get('/reg', async function (req, res) {
+  let dropValues = await registration.dropDown(req.params.tag);
+  res.render('registration', {dropDown:await registration.dropDown(req.params.tag)});
 });
 
 app.get('/filter/:tag', async function(req, res, next) {
