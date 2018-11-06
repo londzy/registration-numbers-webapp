@@ -14,7 +14,7 @@ module.exports = function(pool) {
 
      
 
-      var regList = ['CA', 'CY ', 'CJ', 'CL ', 'CAW ',]
+      var regList = ['CA ', 'CY ', 'CJ ', 'CL ', 'CAW ',]
 
       let townTag = regNumber.substring(0, 3).trim();
 

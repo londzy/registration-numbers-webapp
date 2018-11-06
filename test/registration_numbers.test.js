@@ -71,7 +71,7 @@ describe('Adding registration numbers', function() {
 
 });
 
-describe('Filter registration numbers', function() {
+describe('Filtering registration numbers', function() {
   beforeEach(async function() {
     await pool.query("delete from reg_numbers");
   });
@@ -84,7 +84,7 @@ describe('Filter registration numbers', function() {
     await registration.addRegistration('CAW 4321')
     await registration.addRegistration('CD 4321')
 
-    assert.deepEqual(await registration.filterReg('CA'), [{reg:'CA 1234', town_tag:1}, {reg:'CA 4321',town_tag:1}])
+    assert.deepEqual(await registration.filterReg('CA 1234'), [{reg:'CA 1234', town_tag:1}, {reg:'CA 4321',town_tag:1}])
 
   });
 
