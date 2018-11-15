@@ -32,7 +32,7 @@
 
       </select>
 
-    <input class='regTextandNumTwo' name="regInput" value=""  placeholder=''>
+    <input class='regTextandNumTwo' name="regInput" value=""  placeholder=''  pattern='[A-Z]{2,3}\s\d{3}\W\d{3}|[A-Z]{2,3}\s\d{2,3}' title="Example: CA 123-345">
 
     <button class="addRegButtonTwo" type="submit" name="button">Add</button>
   </form>
@@ -54,7 +54,7 @@
 
     <form action="/reset" method="post">
   <div class="clearButtonTwo center">
-    <input class="clearRegButton" type="Submit" name="button">
+    <input class="clearRegButton" type="Submit" name="button" value="Refresh"> 
 
   </form>
 
